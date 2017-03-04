@@ -3836,6 +3836,10 @@ static void CG_RGBForSaberColor( saber_colors_t color, vector3 *rgb, int cnum, i
 		VectorSet( rgb, 1.0f, 1.0f, 1.0f );
 		break;
 
+	case SABER_RED2:
+		VectorSet(rgb, 1.0f, 0.2f, 0.2f);
+		break;
+
 	default:
 	case SABER_RGB:
 		if ( cnum < MAX_CLIENTS ) {
@@ -4003,6 +4007,11 @@ void CG_DoSaber( vector3 *origin, vector3 *dir, float length, float lengthMax, f
 		glow = media.gfx.world.saber.black.glow;
 		blade = media.gfx.world.saber.black.core;
 		doLight = qfalse;
+		break;
+
+	case SABER_RED2:
+		glow = media.gfx.world.saber.red2.glow;
+		blade = media.gfx.world.saber.red2.core;
 	}
 
 	if ( doLight ) {
@@ -4096,6 +4105,10 @@ void CG_DoSaber( vector3 *origin, vector3 *dir, float length, float lengthMax, f
 		case SABER_BLACK:
 			sbak.customShader = media.gfx.world.saber.black.core;
 			break;
+
+		case SABER_RED2:
+			sbak.customShader = media.gfx.world.saber.red2.core;
+			break;
 		}
 	}
 
@@ -4183,6 +4196,10 @@ void CG_DoSFXSaber( vector3 *blade_muz, vector3 *blade_tip, vector3 *trail_tip, 
 	case SABER_BLACK:
 		glow = media.gfx.world.saber.black.glow;
 		doLight = qfalse;
+		break;
+
+	case SABER_RED2:
+		glow = media.gfx.world.saber.red2.glow;
 		break;
 
 	default:
@@ -5198,6 +5215,10 @@ CheckTrail:
 						VectorSet( &rgb1, 255.0f, 255.0f, 255.0f );
 						break;
 
+					case SABER_RED2:
+						VectorSet(&rgb1, 255.0f, 0.0f, 0.0f);
+						break;
+
 					default:
 					case SABER_FLAME1:
 					case SABER_ELEC1:
@@ -5250,6 +5271,10 @@ CheckTrail:
 
 					case SABER_BLACK:
 						trailShader = media.gfx.world.saber.black.trail;
+						break;
+
+					case SABER_RED2:
+						trailShader = media.gfx.world.saber.red2.trail;
 						break;
 					}
 					// Here we will use the happy process of filling a struct in with arguments and passing it to a trap

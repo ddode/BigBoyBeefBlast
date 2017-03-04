@@ -396,6 +396,7 @@ typedef enum saber_colors_e {
 	SABER_FLAME2,
 	SABER_ELEC2,
 	SABER_BLACK,
+	SABER_RED2,
 	NUM_SABER_COLORS
 } saber_colors_t;
 

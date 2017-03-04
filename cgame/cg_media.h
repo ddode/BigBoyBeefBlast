@@ -204,7 +204,7 @@ typedef struct cgMedia_s {
 
 			struct {
 				struct { qhandle_t core, glow; } red, orange, yellow, green, blue, purple, rgb;
-				struct { qhandle_t core, glow, trail; } black, rgb2, rgb3, rgb4, rgb5;
+				struct { qhandle_t core, glow, trail; } black, rgb2, rgb3, rgb4, rgb5, red2;
 				struct { qhandle_t blade, blade2, end, end2, trail; } sfx;
 
 				qhandle_t blur;
